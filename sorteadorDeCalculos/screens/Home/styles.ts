@@ -12,8 +12,8 @@ export const styles = StyleSheet.create({
     input : {
       width: 150,
       height: 60,
-      backgroundColor: '#1F1E25',
-      color: '#fff',
+      backgroundColor: '#fff',
+      color: '#8C4FCA',
       padding: 16,
       borderRadius: 5,  
       fontSize: 20,
@@ -127,6 +127,31 @@ export const styles = StyleSheet.create({
       backgroundColor: '#4AA5F9',
       justifyContent: 'center',
       alignItems: 'center',
+    },
+
+    zerar: {
+      marginTop: 40,
+      borderRadius: 10,
+      width: 200,
+      height: 40,
+      backgroundColor: '#ff0000',
+      justifyContent: 'center',
+      alignItems: 'center',
+    },
+    
+    nwGame: {
+      alignItems: 'center',
+      justifyContent: 'center',
+      textAlign:'center'
+
+    },
+
+    bttZerar: {
+      fontSize: 20,
+      fontWeight: 'bold',
+      color: '#fff',
+      textAlign:'center',
+    
     },
   
 })

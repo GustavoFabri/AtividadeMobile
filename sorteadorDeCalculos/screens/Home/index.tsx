@@ -21,7 +21,7 @@ export default function Home() {
     var result: Number
 
     const min = 0;
-    const max = 100;
+    const max = 10;
 
     function sortearDesafio(){
 
@@ -70,21 +70,43 @@ export default function Home() {
 
     function validacao(){
 
-        const resp = parseInt(resposta, 10);
-        var acert = parseInt(acerto, 10);
-        var err = parseInt(erro, 10);
+        const resp = parseFloat(resposta);
+        var acert = parseFloat(acerto);
+        var err = parseFloat(erro);
+        var pont = parseFloat(pontos)
 
         if (result == resp){
+            pont += 10
             acert++
+            sortearDesafio()
         }else if (result != resp){
+            pont -= 5
+
+            if (pont <=0){
+                pont = 0
+            }
+
             err++
         }
 
         const erros = err.toString()
         const acertos = acert.toString()
+        const total = pont.toString()
 
+        setResposta('')
         setAcerto(acertos)
         setErro(erros)
+        setPontos(total)
+        
+    }
+
+    function zerarSorteio(){
+        setPontos('0')
+        setResposta('')
+        setErro('0')
+        setAcerto('0')
+       
+
     }
 
     
@@ -170,7 +192,6 @@ export default function Home() {
                 <TextInput 
                     keyboardType="numeric"
                     style={styles.input}
-                    placeholderTextColor={'#fff'}
                     onChangeText={text => setResposta(text)}
                     value={resposta}
 
@@ -182,6 +203,20 @@ export default function Home() {
                         
                     
                     <Text style={styles.textResp}>Validar</Text>
+
+                </TouchableOpacity>
+
+            </View>
+
+
+            <View style={styles.nwGame}>
+
+                <TouchableOpacity 
+                    style={styles.zerar}
+                    onPress={zerarSorteio}>
+                            
+                        
+                    <Text style={styles.bttZerar}>Novo Jogo</Text>
 
                 </TouchableOpacity>
 
