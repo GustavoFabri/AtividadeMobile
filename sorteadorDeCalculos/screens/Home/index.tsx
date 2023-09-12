@@ -178,7 +178,7 @@ export default function Home() {
                     data={produto}
                     keyExtractor={(item) => item}
                     renderItem={({ item }) => (
-                        <Pjjjroduto name={item} onRemove={() => handleProdutoRemove(item)} />
+                        <Produto name={item} onRemove={() => handleProdutoRemove(item)} />
                     )}
                 /> */}
             </View>
